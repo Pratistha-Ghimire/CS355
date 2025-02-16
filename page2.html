@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page-2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Submitted Information</h1>
+        <div id="output"></div>
+    </div>
+
+    <button id="darkModeToggle">🌙</button>
+    <script src="script.js"></script>
+    <script>
+        // Parse submitted data
+        const params = new URLSearchParams(location.search);
+        const outputDiv = document.getElementById("output");
+
+        params.forEach((value, key) => {
+            const row = document.createElement("div");
+            row.classList.add("row");
+            row.innerHTML = `<strong>${key}:</strong> ${value}`;
+            outputDiv.appendChild(row);
+        });
+    </script> 
+</body>
+</html>
